@@ -1,17 +1,25 @@
 # This example requires the 'message_content' intent.
 
 import discord
+from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-@client.event
-async def on_ready():
-    print(f'We have logged in as {client.user}')
-    channel = client.get_channel(810821992647360513)
-    view = discord.ui.View()
+
+bot.run("OTc1MjM0NTg3NDE0Mzg4NzQ3.G-WPfP.JlhSaD82yyn4fP58KajvZgwvwgmhrvPjzNt_jA")
+
+class CounterBot(commands.Bot):
+    def __init__(self):
+        super().__init__(command_prefix=commands.when_mentioned_or('$'))
+
+    async def on_ready(self):
+        print(f'Logged in as {self.user} (ID: {self.user.id})')
+        print('------')
+        channel = client.get_channel(810821992647360513)
+        view = discord.ui.View()
 
 class HogeList(discord.ui.View):
     def __init__(self,args):
@@ -33,4 +41,5 @@ class HugaList(discord.ui.Select):
 async def makeButton(ctx: commands.context,*args):
     await ctx.send('Press!', view=HogeButton(args))
 
-client.run('OTc1MjM0NTg3NDE0Mzg4NzQ3.G-WPfP.JlhSaD82yyn4fP58KajvZgwvwgmhrvPjzNt_jA')
+client.run('token') 
+#reset token
