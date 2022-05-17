@@ -1,7 +1,7 @@
 from discord.ext import commands
 import discord
 import sys
-sys.path.append("~/DiscordBot/for-fun/discord_token")
+sys.path.append(".\discord_token")
 import discord_token as dscrd
 
 Token=dscrd.discToken
