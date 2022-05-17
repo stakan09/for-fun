@@ -12,8 +12,8 @@ Amazon Linux(EC2)上で動かした際の覚書
 
 2. Windows版にモジュールを入れる場合と違って以下のコードで2.0aをインストール可能
 
-    git clone https://github.com/Rapptz/discord.py
-    cd discord.py
-    python3 -m pip install -U .[voice]
+    `git clone https://github.com/Rapptz/discord.py`
+    `cd discord.py`
+    `python3 -m pip install -U .[voice]`
 
 以上！
