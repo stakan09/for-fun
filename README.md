@@ -18,8 +18,8 @@ Amazon Linux(EC2)上で動かした際の覚書
 
 以上！
 
-DynamoDBについて　　
-    参考リンク　　
+DynamoDBについて
+
         https://qiita.com/asasigure/items/4e6c76d8fd7f903a2318　　
         https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/GettingStarted.html　　
         https://qiita.com/k_uki512/items/0b988fd342b6c023cf15
