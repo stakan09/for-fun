@@ -1,6 +1,7 @@
 from discord.ext import commands
 import discord
 import sys
+
 sys.path.append(".\discord_token")
 import discord_token as dscrd
 
@@ -24,5 +25,6 @@ bot = CounterBot()
 @bot.command()
 async def log(ctx, arg1,arg2,*args):
     await ctx.send('Training:{} Weights:{} Reps:{}'.format(arg1,arg2,args))
+
 
 bot.run(Token) 
