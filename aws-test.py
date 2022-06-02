@@ -56,7 +56,7 @@ class Kintore:
         else:
             return self.table
 
-    def add_movie(self, Day, Where, Type, Weight, Reps):
+    def add_record(self, Day, Where, Type, Weight, Reps):
         """
         Adds a movie to the table.
         :param title: The title of the movie.
@@ -68,15 +68,16 @@ class Kintore:
             self.table.put_item(
                 Item={
                     'Day': Day,
-                    'Where': where,
+                    'Where': Where,
                     'info': {'Type': Type, 'Weight': Weight, 'Reps': Reps}})
         except ClientError as err:
             logger.error(
                 "Couldn't add movie %s to table %s. Here's why: %s: %s",
-                title, self.table.name,
+                Where, self.table.name,
                 err.response['Error']['Code'], err.response['Error']['Message'])
             raise
 
 dynamodb=Kintore(boto3.resource('dynamodb',region_name='us-east-1'))
 #Kintore.create_table(dynamodb,'TrainingRecord')
-Kintore.add_movie(dynamodb,20220601,Legs,Normal,0,0)#ここうまくいっていない
+#dynamodb.create_table('TrainingRecord')
+dynamodb.add_record("20220601",'Legs','Normal',"0","0")#ここうまくいっていない
